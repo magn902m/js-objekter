@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse 2: Vis dyret i DOM</title>
+  </head>
+  <body>
+    <article></article>
+    <img src="" alt="" />
+    <script>
+      //Kontroller om DOM´en er loaded
+      window.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        //Erklæret object
+        const dyr = [
+          {
+            navn: "gris",
+            type: "pattedyr",
+            levested: "svinefarme",
+            billede: "http://mabe-kea.dk/E19/pics/pig.png",
+          },
+          {
+            navn: "frø",
+            type: "amfibe",
+            levested: "græs",
+            billede: "http://mabe-kea.dk/E19/pics/frog.png",
+          },
+          {
+            navn: "ræv",
+            type: "pattedyr",
+            levested: "skov",
+            billede: "http://mabe-kea.dk/E19/pics/fox.png",
+          },
+          {
+            navn: "sild",
+            type: "fisk",
+            levested: "vand",
+            billede: "http://mabe-kea.dk/E19/pics/sild.jpg",
+          },
+          {
+            navn: "krokodille",
+            type: "krybdyr",
+            levested: "jungle",
+            billede: "http://mabe-kea.dk/E19/pics/kroko.jpg",
+          },
+        ];
+
+        console.log(dyr);
+        // //Laver en const for info på dyr
+        // const infoDyr = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+
+        // //Udskriv data i console
+        // // console.log(dyr);
+        // // console.log(infoDyr);
+
+        // //Peger på article tagget
+        // const visDyr = document.querySelector("article");
+
+        // //Opretter et p tag
+        // let p = document.createElement("p");
+        // visDyr.appendChild(p);
+        // const visDyrText = visDyr.querySelector("p");
+
+        // //Udskriv info på dyr i html
+        // visDyrText.textContent = infoDyr;
+
+        // //Opretter et img tag
+        // let img = document.createElement("img");
+        // visDyr.appendChild(img);
+
+        // //Vis dyr
+        // visDyr.querySelector("img").src = dyr.billede;
+      }
+    </script>
+  </body>
+</html>
