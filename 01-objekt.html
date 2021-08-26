@@ -8,19 +8,24 @@
   </head>
   <body>
     <script>
+      //Kontroller om DOM´en er loaded
       document.addEventListener("DOMContentLoaded", start);
 
       function start() {
+        //Erklæret object
         let dyr = {
           navn: "gris",
           type: "pattedyr",
           billede: "http://mabe-kea.dk/E19/pics/pig.png",
           levested: "svinefarme",
         };
+
+        //Laver en const for info på dyr
+        const infoDyr = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+
+        //Udskriv data i console
         console.log(dyr);
-        console.log(
-          `Dyr: ${dyr.navn} Type: ${dyr.type} Levested: ${dyr.levested}`
-        );
+        console.log(infoDyr);
       }
     </script>
   </body>
