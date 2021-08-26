@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <section id="event_container"></section>
+    <template>
+      <article id="events">
+        <h3></h3>
+        <img src="" alt="" />
+        <h3 class="navn"></h3>
+        <p class="levested"></p>
+      </article>
+    </template>
+  </body>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", start);
+
+    let events = [
+      {
+        billede:
+          "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-360.jpg",
+        navn: "A Calling",
+      },
+      {
+        billede:
+          "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+        navn: "A Hole In My Heart",
+      },
+      {
+        billede:
+          "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-360.jpg",
+        navn: "A Place In The Sun - 110 years after the genocide",
+      },
+      {
+        billede:
+          "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/9ZXEAY471UE4gFwHMXeRb17p-360.jpg",
+        navn: "A Summer Place",
+      },
+      {
+        billede:
+          "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd-360.jpg",
+        navn: "A Tower of Two",
+      },
+    ];
+
+    function start() {
+      //erklæret object
+      const eventsVis = document.querySelector("#event_container");
+      const eventTemp = document.querySelector("template");
+
+      //Løb liste igennem og indsæt i #liste
+      events.forEach((events) => {
+        let klon = eventTemp.cloneNode(true).content;
+        klon.querySelector("img").src = events.billede;
+        klon.querySelector(".navn").innerHTML += events.navn;
+        klon.querySelector(".levested").innerHTML += events.levested;
+        eventsVis.appendChild(klon);
+      });
+      console.log(events);
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    img {
+      max-width: 100%;
+    }
+    section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+      width: 85vw;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 768px) {
+      main {
+      }
+
+      article {
+      }
+    }
+  </style>
+</html>
