@@ -10,8 +10,8 @@
     <article id="dyr">
       <h3></h3>
       <img src="" alt="" />
-      <p>Type:</p>
-      <p>Levested:</p>
+      <p>Type: <span></span></p>
+      <p>Levested: <span></span></p>
     </article>
 
     <script>
@@ -51,12 +51,12 @@
         visDyr.querySelector("img").src = dyr.billede;
 
         //Vis type af dyr
-        const typeDyr = document.querySelector("article:nth-child(1) p");
-        typeDyr.textContent = `Type: ${dyr.type}`;
+        const typeDyr = document.querySelector("p:nth-child(3) span");
+        typeDyr.textContent = `${dyr.type}`;
 
         //Vis levested af dyr
-        const levestedDyr = document.querySelector("article:nth-child(2) p");
-        levestedDyr.textContent = `Levested: ${dyr.levested}`;
+        const levestedDyr = document.querySelector("p:nth-child(4) span");
+        levestedDyr.textContent = `${dyr.levested}`;
       }
     </script>
   </body>
