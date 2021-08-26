@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse 3: Indsæt dyr i struktureret HTML</title>
+  </head>
+  <body>
+    <article id="dyr">
+      <h3></h3>
+      <img src="" alt="" />
+      <p>Type:</p>
+      <p>Levested:</p>
+    </article>
+
+    <script>
+      //Kontroller om DOM´en er loaded
+      window.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        //Erklæret object
+        const dyr = {
+          navn: "gris",
+          type: "pattedyr",
+          billede: "http://mabe-kea.dk/E19/pics/pig.png",
+          levested: "svinefarme",
+        };
+
+        //Laver en const for info på dyr
+        // const infoDyr = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+
+        //Udskriv data i console
+        // console.log(dyr);
+        // console.log(infoDyr);
+
+        //Peger på article tagget
+        const visDyr = document.querySelector("article");
+
+        //Peger på p tag
+        const visDyrText = visDyr.querySelector("p");
+
+        //Udskriv info på dyr i html
+        // visDyrText.textContent = infoDyr;
+
+        //Udskriv navn på dyr
+        const navnDyr = document.querySelector("h3");
+        navnDyr.textContent = dyr.navn;
+
+        //Vis billede af dyr
+        visDyr.querySelector("img").src = dyr.billede;
+
+        //Vis type af dyr
+        const typeDyr = document.querySelector("article:nth-child(1) p");
+        typeDyr.textContent = `Type: ${dyr.type}`;
+
+        //Vis levested af dyr
+        const levestedDyr = document.querySelector("article:nth-child(2) p");
+        levestedDyr.textContent = `Levested: ${dyr.levested}`;
+      }
+    </script>
+  </body>
+</html>
