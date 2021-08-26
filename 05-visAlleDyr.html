@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse 5: Liste af dyr vises i DOM</title>
+  </head>
+  <body>
+    <article></article>
+
+    <script>
+      //Kontroller om DOM´en er loaded
+      window.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        //Erklæret object
+        let dyr = [
+          {
+            navn: "gris",
+            type: "pattedyr",
+            levested: "svinefarme",
+            billede: "http://mabe-kea.dk/E19/pics/pig.png",
+          },
+          {
+            navn: "frø",
+            type: "amfibe",
+            levested: "græs",
+            billede: "http://mabe-kea.dk/E19/pics/frog.png",
+          },
+          {
+            navn: "ræv",
+            type: "pattedyr",
+            levested: "skov",
+            billede: "http://mabe-kea.dk/E19/pics/fox.png",
+          },
+          {
+            navn: "sild",
+            type: "fisk",
+            levested: "vand",
+            billede: "http://mabe-kea.dk/E19/pics/sild.jpg",
+          },
+          {
+            navn: "krokodille",
+            type: "krybdyr",
+            levested: "jungle",
+            billede: "http://mabe-kea.dk/E19/pics/kroko.jpg",
+          },
+        ];
+
+        console.log(dyr);
+        // //Laver en const for info på dyr
+        const visDyr = document.querySelector("article");
+
+        dyr.forEach((etDyr) => {
+          console.log(etDyr.navn);
+          visDyr.innerHTML += `<p>Dyr: ${etDyr.navn}, type: ${etDyr.type}, levested: ${etDyr.levested}</p>`;
+        });
+      }
+    </script>
+  </body>
+</html>
